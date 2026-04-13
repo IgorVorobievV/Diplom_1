@@ -5,10 +5,13 @@ from praktikum.bun import Bun
 class TestBurger:
     
     def test_bun_burger_none(self, burger):
-        assert burger.bun == None
+        assert burger.bun is None
     
     def test_ingredients_burger_list(self, burger):
-        assert burger.ingredients == []
+        assert isinstance(burger.ingredients, list)
+        assert len(burger.ingredients) == 0
+        assert type(burger.ingredients) is list
+
 
     def test_set_buns_burger_added_object_bun(self, burger):
         bun = Bun('Булка', 100)
